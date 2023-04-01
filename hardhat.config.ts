@@ -3,10 +3,6 @@ import "@nomicfoundation/hardhat-toolbox";
 
 import "hardhat-deploy";
 
-import "./tasks";
-import "./tasks/functionSignature";
-import "./tasks/storageStructure";
-
 import * as dotenv from "dotenv";
 dotenv.config();
 
@@ -20,27 +16,25 @@ const config: HardhatUserConfig = {
       },
     },
   },
-  namedAccounts: {
-    deployer: {
-      default: 0,
-      localhost: 0,
-    },
-  },
-  // Default network when you don't specify "--network {network_name}"
   defaultNetwork: "hardhat",
   networks: {
     hardhat: {},
     localhost: {
-      url: "http://localhost:8545",
+      url: "http://127.0.0.1:8545",
     },
-    goerli: {
-      url: "https://goerli.infura.io/v3/" + process.env.INFURA_KEY,
+    bnbtest: {
+      url: process.env.BNBTest_URL,
+      accounts: {
+        mnemonic: process.env.BNBTest_MNEMONIC,
+        count: 10,
+      },
+    },
+    bnb: {
+      url: process.env.BNB_URL,
       accounts:
-        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
-      // {
-      //  mnemonic: process.env.MNEMONIC,
-      //  count: 20,
-      //}
+        process.env.BNB_PRIVATE_KEY !== undefined
+          ? [process.env.BNB_PRIVATE_KEY]
+          : [],
     },
   },
   paths: {
@@ -50,7 +44,15 @@ const config: HardhatUserConfig = {
     artifacts: "./artifacts",
   },
   mocha: {
-    timeout: 20000,
+    timeout: 200000,
+  },
+  gasReporter: {
+    enabled: true,
+    currency: "USD",
+    coinmarketcap: process.env.COINMARKETCAP_API_KEY,
+  },
+  etherscan: {
+    apiKey: process.env.ETHERSCAN_API_KEY,
   },
 };
 
