@@ -4,9 +4,10 @@ pragma solidity ^0.8.4;
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 import "../RewardToken.sol";
 
-contract LiquidityMining is Ownable {
+contract LiquidityMiningLogic is Ownable, Initializable {
     using SafeMath for uint256;
     using SafeERC20 for IERC20;
 
@@ -31,7 +32,7 @@ contract LiquidityMining is Ownable {
     event Deposit(address indexed user, uint256 indexed pid, uint256 amount);
     event Withdraw(address indexed user, uint256 indexed pid, uint256 amount);
 
-    constructor(RewardToken _rewardToken) {
+    function initialize(RewardToken _rewardToken) public initializer {
         rewardToken = _rewardToken;
     }
 
