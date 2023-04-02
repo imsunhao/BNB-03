@@ -1,6 +1,6 @@
 import { DeployFunction } from "hardhat-deploy/dist/types";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
-import { setStoreAddress } from "../scripts/helper";
+import { setStoreAddress, verifyingContract } from "../scripts/helper";
 
 const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const { deployments, network } = hre;
@@ -14,6 +14,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     log: true,
   });
   setStoreAddress(network, deployer, "ProxyAdmin", proxyAdmin);
+  await verifyingContract(hre, proxyAdmin);
 };
 
 func.tags = ["ProxyAdmin"];

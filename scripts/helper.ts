@@ -49,13 +49,13 @@ export const setStoreAddress = function (
 
 export const verifyingContract = async function (
   hre: HardhatRuntimeEnvironment,
-  contract: DeployResult,
+  contract: Pick<DeployResult, "address" | "implementation">,
   constructorArguments: string[] = []
 ) {
   const { network } = hre;
   if (network.name === "hardhat") return;
   await hre.run("verify:verify", {
-    address: contract.address,
+    address: contract.implementation || contract.address,
     constructorArguments: constructorArguments,
   });
   console.log(`${contract.address} verified!`);

@@ -5,5 +5,12 @@
 		"RewardToken": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
 		"LiquidityMining": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
 		"LiquidityMiningImplementation": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9"
+	},
+	"bnbtest": {
+		"ProxyAdmin": "0xAD33606AF92a39a5914a197b189695F0fb2295e2",
+		"LPToken": "0xfb09C934a82AC16416A170E771445F41050777a1",
+		"RewardToken": "0x667A6564A905CE8549B03211256b0ae0FC4FAfd4",
+		"LiquidityMining": "0xbb33D059abd651833C8441B3Bfa15241eE5C5AE8",
+		"LiquidityMiningImplementation": "0x4B94d8E4411584AAE95aCaB07E6c85019d67AAD2"
 	}
 }
