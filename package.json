@@ -1,5 +1,6 @@
 {
   "name": "hardhat-project",
+  "license": "MIT",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^2.0.1",
     "@openzeppelin/contracts": "^4.8.1",
@@ -10,7 +11,7 @@
   "scripts": {
     "compile": "hardhat compile",
     "test": "hardhat test",
-    "deploy": "hardhat run scripts/deploy.ts"
+    "deploy": "hardhat deploy --export-all deployments/index.json"
   },
   "dependencies": {
     "dotenv": "^16.0.3"

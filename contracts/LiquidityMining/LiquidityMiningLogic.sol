@@ -34,6 +34,7 @@ contract LiquidityMiningLogic is Ownable, Initializable {
 
     function initialize(RewardToken _rewardToken) public initializer {
         rewardToken = _rewardToken;
+        _transferOwnership(_msgSender());
     }
 
     function add(IERC20 _lpToken) public onlyOwner {
