@@ -28,6 +28,7 @@ contract LiquidityMiningLogic is Ownable, Initializable {
     mapping(uint256 => mapping(address => UserInfo)) public userInfoMap;
     uint256 public totalAllocationPoint = 0;
     uint256 public startBlock = 0;
+    uint256 public test = 0;
 
     event Deposit(address indexed user, uint256 indexed pid, uint256 amount);
     event Withdraw(address indexed user, uint256 indexed pid, uint256 amount);
