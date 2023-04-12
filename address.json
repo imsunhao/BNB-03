@@ -12,5 +12,8 @@
 		"RewardToken": "0x667A6564A905CE8549B03211256b0ae0FC4FAfd4",
 		"LiquidityMining": "0xbb33D059abd651833C8441B3Bfa15241eE5C5AE8",
 		"LiquidityMiningImplementation": "0x745348Fbd3DA063c2d8aE36365E5238701c20fF2"
+	},
+	"bnb": {
+		"LPToken": "0x5f0817A999Fe1AdaeC54C8fa24eC90180eC0Fd1c"
 	}
 }
